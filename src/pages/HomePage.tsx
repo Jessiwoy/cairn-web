@@ -1,33 +1,31 @@
 import { Link } from "react-router-dom";
 
+import { Button } from "@/components/atoms/Button";
+import { Container } from "@/components/atoms/Container";
+import { Typography } from "@/components/atoms/Typography";
+
 export function HomePage() {
   return (
     <section className="bg-cairn-black text-white">
-      <div className="mx-auto grid min-h-[calc(100vh-4rem)] max-w-7xl items-end px-5 py-16 lg:grid-cols-[1fr_0.8fr] lg:px-8 lg:py-24">
+      <Container className="grid min-h-[calc(100vh-4rem)] items-end py-16 lg:grid-cols-[1fr_0.8fr] lg:py-24">
         <div className="max-w-2xl">
-          <p className="mb-5 text-sm font-medium uppercase tracking-[0.18em] text-cairn-sand">
+          <Typography className="mb-5 text-cairn-sand" variant="eyebrow">
             Outdoor retail premium
-          </p>
-          <h1 className="text-5xl font-semibold leading-tight md:text-7xl">
+          </Typography>
+          <Typography as="h1" variant="display">
             Gear built for the long route.
-          </h1>
-          <p className="mt-6 max-w-xl text-base leading-7 text-white/72 md:text-lg">
+          </Typography>
+          <Typography className="mt-6 max-w-xl text-white/72 md:text-lg" variant="body">
             Equipamentos e vestuario outdoor para trilhas, acampamentos,
             trekking e exploracao com desempenho tecnico e visual sobrio.
-          </p>
+          </Typography>
           <div className="mt-10 flex flex-wrap gap-3">
-            <Link
-              to="/catalog"
-              className="inline-flex h-12 items-center justify-center bg-white px-6 text-sm font-semibold text-cairn-black transition hover:bg-cairn-sand"
-            >
-              Explorar produtos
-            </Link>
-            <Link
-              to="/catalog?collection=field-tested"
-              className="inline-flex h-12 items-center justify-center border border-white/30 px-6 text-sm font-semibold text-white transition hover:border-cairn-sand hover:text-cairn-sand"
-            >
-              Field tested
-            </Link>
+            <Button asChild size="lg" variant="secondary">
+              <Link to="/catalog">Explorar produtos</Link>
+            </Button>
+            <Button asChild className="border-white/30 text-white hover:border-cairn-sand hover:text-cairn-sand" size="lg" variant="outline">
+              <Link to="/catalog?collection=field-tested">Field tested</Link>
+            </Button>
           </div>
         </div>
 
@@ -37,7 +35,7 @@ export function HomePage() {
           <p>Trekking</p>
           <p>Bushcraft</p>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

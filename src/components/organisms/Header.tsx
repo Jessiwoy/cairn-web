@@ -1,6 +1,9 @@
 import { Heart, Search, ShoppingBag, UserRound } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
 
+import { Button } from "@/components/atoms/Button";
+import { Container } from "@/components/atoms/Container";
+
 const navigationItems = [
   { label: "Hiking", href: "/catalog?category=hiking" },
   { label: "Camping", href: "/catalog?category=camping" },
@@ -11,7 +14,7 @@ const navigationItems = [
 export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-cairn-black text-white">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 lg:px-8">
+      <Container className="flex h-16 items-center justify-between">
         <Link to="/" className="text-xl font-semibold tracking-normal">
           CAIRN
         </Link>
@@ -31,36 +34,48 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Link
-            to="/catalog"
-            className="inline-flex h-10 w-10 items-center justify-center text-white/80 transition hover:text-cairn-sand"
-            aria-label="Buscar produtos"
+          <Button
+            asChild
+            size="icon"
+            variant="ghost"
+            className="text-white/80 hover:text-cairn-sand"
           >
-            <Search size={20} strokeWidth={1.8} />
-          </Link>
-          <Link
-            to="/account"
-            className="inline-flex h-10 w-10 items-center justify-center text-white/80 transition hover:text-cairn-sand"
-            aria-label="Conta"
+            <Link to="/catalog" aria-label="Buscar produtos">
+              <Search size={20} strokeWidth={1.8} />
+            </Link>
+          </Button>
+          <Button
+            asChild
+            size="icon"
+            variant="ghost"
+            className="text-white/80 hover:text-cairn-sand"
           >
-            <UserRound size={20} strokeWidth={1.8} />
-          </Link>
-          <Link
-            to="/account"
-            className="inline-flex h-10 w-10 items-center justify-center text-white/80 transition hover:text-cairn-sand"
-            aria-label="Wishlist"
+            <Link to="/account" aria-label="Conta">
+              <UserRound size={20} strokeWidth={1.8} />
+            </Link>
+          </Button>
+          <Button
+            asChild
+            size="icon"
+            variant="ghost"
+            className="text-white/80 hover:text-cairn-sand"
           >
-            <Heart size={20} strokeWidth={1.8} />
-          </Link>
-          <Link
-            to="/cart"
-            className="inline-flex h-10 w-10 items-center justify-center text-white/80 transition hover:text-cairn-sand"
-            aria-label="Carrinho"
+            <Link to="/account" aria-label="Wishlist">
+              <Heart size={20} strokeWidth={1.8} />
+            </Link>
+          </Button>
+          <Button
+            asChild
+            size="icon"
+            variant="ghost"
+            className="text-white/80 hover:text-cairn-sand"
           >
-            <ShoppingBag size={20} strokeWidth={1.8} />
-          </Link>
+            <Link to="/cart" aria-label="Carrinho">
+              <ShoppingBag size={20} strokeWidth={1.8} />
+            </Link>
+          </Button>
         </div>
-      </div>
+      </Container>
     </header>
   );
 }
