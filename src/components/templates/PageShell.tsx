@@ -1,5 +1,8 @@
 import type { ReactNode } from "react";
 
+import { Container } from "@/components/atoms/Container";
+import { Typography } from "@/components/atoms/Typography";
+
 type PageShellProps = {
   eyebrow: string;
   title: string;
@@ -8,14 +11,16 @@ type PageShellProps = {
 
 export function PageShell({ eyebrow, title, children }: PageShellProps) {
   return (
-    <section className="mx-auto min-h-[calc(100vh-4rem)] max-w-7xl px-5 py-16 lg:px-8 lg:py-24">
-      <p className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-cairn-copper">
-        {eyebrow}
-      </p>
-      <h1 className="mb-6 max-w-3xl text-4xl font-semibold leading-tight text-cairn-black md:text-6xl">
-        {title}
-      </h1>
-      {children}
+    <section className="min-h-[calc(100vh-4rem)] py-16 lg:py-24">
+      <Container>
+        <Typography className="mb-4" variant="eyebrow">
+          {eyebrow}
+        </Typography>
+        <Typography as="h1" className="mb-6 max-w-3xl text-cairn-black" variant="h1">
+          {title}
+        </Typography>
+        {children}
+      </Container>
     </section>
   );
 }
