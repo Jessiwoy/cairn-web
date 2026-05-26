@@ -76,10 +76,10 @@ Concluido no `cairn-web`:
 - Carrinho local persistido com Zustand e `localStorage`.
 - Wishlist local persistida com Zustand e `localStorage`.
 - Checkout mockado com dados de contato, entrega, resumo e confirmacao simulada.
+- Login/cadastro visual com formularios e validacao HTML nativa.
 
 Ainda pendente na Fase 1:
 
-- Login/cadastro visual completos.
 - Conta e pedidos com mock data.
 - Admin dashboard visual simplificado.
 - Refinamento de assets reais, incluindo hero com video/imagem de campanha.

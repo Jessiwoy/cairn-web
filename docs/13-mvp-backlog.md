@@ -234,6 +234,8 @@ Criterios de aceite:
 
 ### Historia 7.1: Criar telas de login e cadastro
 
+Estado: parcialmente concluida no frontend. As telas visuais existem com formularios e validacao HTML nativa; integracao com API permanece pendente.
+
 Como cliente, quero entrar ou criar conta para acessar minha area autenticada.
 
 Criterios de aceite:
