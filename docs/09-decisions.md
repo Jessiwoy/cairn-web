@@ -129,3 +129,19 @@ Implementar wishlist com Zustand persistido em `localStorage`, usando snapshots 
 Consequencias:
 
 A rota `/wishlist` passa a representar os favoritos da fase mock. Quando a autenticacao e o backend estiverem disponiveis, a wishlist local deve ser reconciliada com endpoints REST e associada ao usuario autenticado.
+
+## 2026-05-26 - Conta e pedidos mockados antes da autenticacao real
+
+Estado: aceita
+
+Contexto:
+
+A Fase 1 precisa validar a experiencia da area do cliente sem antecipar a implementacao real de autenticacao, sessao ou pedidos persistidos.
+
+Decisao:
+
+Implementar `/account` como tela mockada com dados locais de usuario, endereco e pedidos em `src/data/account.ts`, deixando claro na UI que a sessao ainda e simulada.
+
+Consequencias:
+
+A area de conta ja demonstra navegacao, historico de pedidos e continuidade com favoritos/catalogo. Na Fase 2, esses mocks devem ser substituidos por endpoints REST, JWT, sessao persistida e rotas protegidas.

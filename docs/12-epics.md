@@ -90,7 +90,7 @@ Inclui:
 
 Objetivo: implementar autenticacao completa com backend, persistencia de sessao e area autenticada basica.
 
-Estado atual: pendente. Existem rotas placeholder de login, cadastro e conta, sem formularios reais ou integracao.
+Estado atual: parcialmente concluido no frontend. Existem login/cadastro visuais e area de conta com perfil, endereco e pedidos em mock data; autenticacao real, sessao persistida e rotas protegidas permanecem pendentes.
 
 Inclui:
 

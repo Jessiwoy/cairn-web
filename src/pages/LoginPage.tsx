@@ -58,9 +58,17 @@ export function LoginPage() {
             </div>
 
             {submitted ? (
-              <p className="mt-4 text-sm font-medium text-cairn-green">
-                Acesso preparado para a proxima etapa de autenticacao segura.
-              </p>
+              <div className="mt-4 border border-cairn-green/25 bg-cairn-green/8 p-4">
+                <p className="text-sm font-medium text-cairn-green">
+                  Acesso preparado para a proxima etapa de autenticacao segura.
+                </p>
+                <Link
+                  className="mt-3 inline-flex text-sm font-semibold text-cairn-black hover:text-cairn-copper"
+                  to="/account"
+                >
+                  Acessar area da conta mockada
+                </Link>
+              </div>
             ) : null}
 
             <div className="mt-6 flex flex-col gap-3 border-t border-cairn-black/10 pt-5 text-sm text-cairn-gray">
