@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Heart, ShoppingBag } from "lucide-react";
+import { Heart, ShoppingCart } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 
 import { Badge } from "@/components/atoms/Badge";
@@ -11,6 +11,7 @@ import { ProductPrice } from "@/components/molecules/ProductPrice";
 import { QuantitySelector } from "@/components/molecules/QuantitySelector";
 import { RatingSummary } from "@/components/molecules/RatingSummary";
 import { products } from "@/data/products";
+import { useCartStore } from "@/store/cartStore";
 
 const stockLabels = {
   in_stock: "Em estoque",
@@ -21,7 +22,9 @@ const stockLabels = {
 export function ProductPage() {
   const { slug } = useParams();
   const product = products.find((item) => item.slug === slug);
+  const addItem = useCartStore((state) => state.addItem);
   const [quantity, setQuantity] = useState(1);
+  const [wasAdded, setWasAdded] = useState(false);
   const [selectedVariantId, setSelectedVariantId] = useState<string | undefined>(
     product?.variants[0]?.id,
   );
@@ -59,6 +62,11 @@ export function ProductPage() {
 
   const maxQuantity = selectedVariant?.stock ?? (product.stockStatus === "low_stock" ? 4 : 10);
   const isUnavailable = product.stockStatus === "out_of_stock" || maxQuantity <= 0;
+
+  const handleAddToCart = () => {
+    addItem({ product, quantity, variant: selectedVariant });
+    setWasAdded(true);
+  };
 
   return (
     <section className="bg-cairn-off-white py-10 lg:py-16">
@@ -150,8 +158,13 @@ export function ProductPage() {
                     value={quantity}
                   />
                 </label>
-                <Button className="min-w-56" disabled={isUnavailable} size="lg">
-                  <ShoppingBag size={18} />
+                <Button
+                  className="min-w-56"
+                  disabled={isUnavailable}
+                  onClick={handleAddToCart}
+                  size="lg"
+                >
+                  <ShoppingCart size={18} />
                   Adicionar ao carrinho
                 </Button>
                 <Button aria-label="Adicionar aos favoritos" size="lg" variant="outline">
@@ -159,6 +172,11 @@ export function ProductPage() {
                   Favoritar
                 </Button>
               </div>
+              {wasAdded ? (
+                <p className="mt-3 text-sm font-medium text-cairn-green">
+                  Produto adicionado ao carrinho.
+                </p>
+              ) : null}
             </div>
 
             <div className="mt-8 grid gap-6 border-t border-cairn-black/10 pt-6 md:grid-cols-2">
