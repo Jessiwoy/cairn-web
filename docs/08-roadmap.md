@@ -74,13 +74,13 @@ Concluido no `cairn-web`:
 - Home retail, catalogo, filtros, ordenacao e busca por query.
 - Pagina de produto com galeria mockada, variantes, preco, estoque e CTA de carrinho.
 - Carrinho local persistido com Zustand e `localStorage`.
+- Wishlist local persistida com Zustand e `localStorage`.
 - Checkout mockado com dados de contato, entrega, resumo e confirmacao simulada.
 
 Ainda pendente na Fase 1:
 
 - Login/cadastro visual completos.
 - Conta e pedidos com mock data.
-- Wishlist persistida localmente.
 - Admin dashboard visual simplificado.
 - Refinamento de assets reais, incluindo hero com video/imagem de campanha.
 

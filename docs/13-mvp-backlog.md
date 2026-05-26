@@ -16,7 +16,7 @@ Este backlog traduz os epicos em historias e entregas executaveis. O desenvolvim
 1. Fundacao do Frontend. Estado: concluido.
 2. Design System e Componentes Base. Estado: base concluida.
 3. Catalogo e Descoberta de Produtos. Estado: concluido em mock data.
-4. Pagina de Produto. Estado: parcialmente concluido; wishlist/reviews ainda pendentes.
+4. Pagina de Produto. Estado: parcialmente concluido; reviews ainda pendentes.
 5. Carrinho e Checkout Mockado. Estado: concluido em mock data local.
 6. Backend Base e Autenticacao. Estado: pendente no repositorio `cairn-api`.
 7. Integracao de Autenticacao no Frontend. Estado: pendente.
@@ -161,7 +161,7 @@ Criterios de aceite:
 
 ### Historia 4.2: Criar wishlist no produto
 
-Estado: pendente.
+Estado: concluida em mock data local.
 
 Como cliente, quero salvar produtos de interesse para voltar depois.
 

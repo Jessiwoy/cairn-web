@@ -8,6 +8,7 @@ Estado atual:
 
 - Catalogo e categorias usam mock data local em `src/data`.
 - Carrinho usa Zustand persistido em `localStorage`.
+- Wishlist usa Zustand persistido em `localStorage`.
 - Checkout gera confirmacao simulada no frontend e limpa o carrinho.
 - Pedidos ainda nao sao persistidos localmente; a persistencia real fica para backend/API.
 
@@ -159,6 +160,6 @@ Mocks devem parecer dados reais de ecommerce e antecipar a modelagem backend.
 
 ## Persistencia Local Temporaria
 
-Durante a Fase 1, apenas o carrinho deve persistir localmente para validar continuidade de compra. Pedidos, usuarios, wishlist e admin devem permanecer como mocks ou placeholders ate haver decisao especifica ou integracao com API.
+Durante a Fase 1, carrinho e wishlist podem persistir localmente para validar continuidade de compra e comparacao de produtos. Pedidos, usuarios e admin devem permanecer como mocks ou placeholders ate haver decisao especifica ou integracao com API.
 
-Quando o backend estiver disponivel, o carrinho local deve ser reconciliado com os endpoints REST planejados e pedidos devem ser criados pela API, sem Stripe no MVP.
+Quando o backend estiver disponivel, carrinho e wishlist locais devem ser reconciliados com os endpoints REST planejados e pedidos devem ser criados pela API, sem Stripe no MVP.

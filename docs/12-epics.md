@@ -56,7 +56,7 @@ Inclui:
 
 Objetivo: criar experiencia de decisao de compra.
 
-Estado atual: parcialmente concluido. A pagina de produto tem galeria, informacoes tecnicas, variantes, preco, estoque e CTA de carrinho. Wishlist e reviews detalhadas permanecem pendentes.
+Estado atual: parcialmente concluido. A pagina de produto tem galeria, informacoes tecnicas, variantes, preco, estoque, CTA de carrinho e wishlist local. Reviews detalhadas permanecem pendentes.
 
 Inclui:
 
