@@ -13,19 +13,21 @@ Este backlog traduz os epicos em historias e entregas executaveis. O desenvolvim
 
 ## Ordem Recomendada
 
-1. Fundacao do Frontend.
-2. Design System e Componentes Base.
-3. Catalogo e Descoberta de Produtos.
-4. Pagina de Produto.
-5. Carrinho e Checkout Mockado.
-6. Backend Base e Autenticacao.
-7. Integracao de Autenticacao no Frontend.
-8. Admin Dashboard MVP.
-9. Integracao de Catalogo, Carrinho e Pedidos.
+1. Fundacao do Frontend. Estado: concluido.
+2. Design System e Componentes Base. Estado: base concluida.
+3. Catalogo e Descoberta de Produtos. Estado: concluido em mock data.
+4. Pagina de Produto. Estado: parcialmente concluido; wishlist/reviews ainda pendentes.
+5. Carrinho e Checkout Mockado. Estado: concluido em mock data local.
+6. Backend Base e Autenticacao. Estado: pendente no repositorio `cairn-api`.
+7. Integracao de Autenticacao no Frontend. Estado: pendente.
+8. Admin Dashboard MVP. Estado: pendente.
+9. Integracao de Catalogo, Carrinho e Pedidos. Estado: pendente.
 
 ## Epico 1: Fundacao do Frontend
 
 ### Historia 1.1: Inicializar aplicacao
+
+Estado: concluida.
 
 Como desenvolvedora, quero iniciar o `cairn-web` com React, TypeScript e Vite para ter uma base moderna e simples de evoluir.
 
@@ -38,6 +40,8 @@ Criterios de aceite:
 
 ### Historia 1.2: Configurar stack visual
 
+Estado: concluida.
+
 Como desenvolvedora, quero configurar TailwindCSS e shadcn/ui para construir uma UI consistente e produtiva.
 
 Criterios de aceite:
@@ -48,6 +52,8 @@ Criterios de aceite:
 - Tokens iniciais de cor, tipografia, spacing, radius e sombra definidos.
 
 ### Historia 1.3: Configurar roteamento
+
+Estado: concluida.
 
 Como usuaria, quero navegar entre paginas principais para acessar o fluxo do ecommerce.
 
@@ -62,6 +68,8 @@ Criterios de aceite:
 
 ### Historia 2.1: Criar atoms
 
+Estado: concluida para a base inicial.
+
 Como desenvolvedora, quero componentes basicos reutilizaveis para manter consistencia visual.
 
 Criterios de aceite:
@@ -72,6 +80,8 @@ Criterios de aceite:
 
 ### Historia 2.2: Criar molecules comerciais
 
+Estado: concluida para a base inicial.
+
 Como usuaria, quero informacoes comerciais legiveis para comparar produtos rapidamente.
 
 Criterios de aceite:
@@ -81,6 +91,8 @@ Criterios de aceite:
 - Componentes nao dependem diretamente de mock data.
 
 ### Historia 2.3: Criar organismos globais
+
+Estado: concluida para header/footer iniciais. Busca do header ja abre campo e direciona para `/catalog?q=`.
 
 Como usuaria, quero uma navegacao clara e confiavel para explorar a loja.
 
@@ -95,6 +107,8 @@ Criterios de aceite:
 
 ### Historia 3.1: Criar mock data de catalogo
 
+Estado: concluida.
+
 Como desenvolvedora, quero produtos mockados realistas para construir a experiencia antes da API.
 
 Criterios de aceite:
@@ -104,6 +118,8 @@ Criterios de aceite:
 - Sem lorem ipsum em areas importantes.
 
 ### Historia 3.2: Criar home retail
+
+Estado: parcialmente concluida. A home existe com estrutura retail e produtos destacados, mas ainda falta substituir o hero escuro por fotografia/video de campanha dominante.
 
 Como cliente, quero uma home que pareca uma loja outdoor premium real.
 
@@ -115,6 +131,8 @@ Criterios de aceite:
 - Layout nao parece landing page SaaS.
 
 ### Historia 3.3: Criar catalogo com filtros
+
+Estado: concluida em mock data.
 
 Como cliente, quero filtrar e ordenar produtos para encontrar itens relevantes.
 
@@ -129,6 +147,8 @@ Criterios de aceite:
 
 ### Historia 4.1: Criar pagina de produto
 
+Estado: concluida em mock data.
+
 Como cliente, quero avaliar um produto em detalhe antes de comprar.
 
 Criterios de aceite:
@@ -140,6 +160,8 @@ Criterios de aceite:
 - CTA para adicionar ao carrinho.
 
 ### Historia 4.2: Criar wishlist no produto
+
+Estado: pendente.
 
 Como cliente, quero salvar produtos de interesse para voltar depois.
 
@@ -153,6 +175,8 @@ Criterios de aceite:
 
 ### Historia 5.1: Criar carrinho
 
+Estado: concluida em mock data local.
+
 Como cliente, quero revisar produtos antes de finalizar a compra.
 
 Criterios de aceite:
@@ -164,6 +188,8 @@ Criterios de aceite:
 - Persistir carrinho localmente na fase mock.
 
 ### Historia 5.2: Criar checkout mockado
+
+Estado: concluida em mock data local.
 
 Como cliente, quero passar por um checkout plausivel mesmo sem gateway real.
 

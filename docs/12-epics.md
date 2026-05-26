@@ -6,6 +6,8 @@ Este documento organiza o desenvolvimento futuro por epicos. Cada epico deve ser
 
 Objetivo: criar a base tecnica do `cairn-web`.
 
+Estado atual: concluido na Fase 1.
+
 Inclui:
 
 - Vite, React e TypeScript.
@@ -21,6 +23,8 @@ Inclui:
 
 Objetivo: implementar a base visual reutilizavel do ecommerce.
 
+Estado atual: base inicial concluida; novos componentes devem evoluir conforme as features.
+
 Inclui:
 
 - Atoms.
@@ -34,6 +38,8 @@ Inclui:
 ## Epico 3: Catalogo e Descoberta de Produtos
 
 Objetivo: permitir descoberta e comparacao de produtos com mock data.
+
+Estado atual: concluido em mock data, incluindo home, catalogo, filtros, ordenacao, busca e product cards.
 
 Inclui:
 
@@ -50,6 +56,8 @@ Inclui:
 
 Objetivo: criar experiencia de decisao de compra.
 
+Estado atual: parcialmente concluido. A pagina de produto tem galeria, informacoes tecnicas, variantes, preco, estoque e CTA de carrinho. Wishlist e reviews detalhadas permanecem pendentes.
+
 Inclui:
 
 - Galeria de produto.
@@ -65,6 +73,8 @@ Inclui:
 
 Objetivo: simular o fluxo comercial de checkout sem gateway de pagamento real.
 
+Estado atual: concluido em mock data local. O carrinho usa Zustand com persistencia em `localStorage`; o checkout gera confirmacao simulada e limpa o carrinho.
+
 Inclui:
 
 - Cart drawer ou pagina de carrinho.
@@ -79,6 +89,8 @@ Inclui:
 ## Epico 6: Autenticacao, Sessao e Conta
 
 Objetivo: implementar autenticacao completa com backend, persistencia de sessao e area autenticada basica.
+
+Estado atual: pendente. Existem rotas placeholder de login, cadastro e conta, sem formularios reais ou integracao.
 
 Inclui:
 
@@ -97,6 +109,8 @@ Inclui:
 ## Epico 7: Admin Dashboard MVP
 
 Objetivo: demonstrar controle administrativo, roles, permissoes e CRUD real.
+
+Estado atual: pendente. Existe rota placeholder de admin.
 
 Inclui:
 

@@ -65,4 +65,25 @@ Stripe nao faz parte do MVP.
 
 ## Estado Atual
 
-Projeto em fase de arquitetura, planejamento e documentacao.
+Projeto em Fase 1, com o frontend retail em mock data avancado.
+
+Concluido no `cairn-web`:
+
+- Fundacao React, TypeScript, Vite, TailwindCSS e rotas principais.
+- Design system inicial com atoms, molecules, header, footer e estados vazios.
+- Home retail, catalogo, filtros, ordenacao e busca por query.
+- Pagina de produto com galeria mockada, variantes, preco, estoque e CTA de carrinho.
+- Carrinho local persistido com Zustand e `localStorage`.
+- Checkout mockado com dados de contato, entrega, resumo e confirmacao simulada.
+
+Ainda pendente na Fase 1:
+
+- Login/cadastro visual completos.
+- Conta e pedidos com mock data.
+- Wishlist persistida localmente.
+- Admin dashboard visual simplificado.
+- Refinamento de assets reais, incluindo hero com video/imagem de campanha.
+
+Proximo passo recomendado:
+
+Avancar para autenticacao/conta visual ou wishlist local, antes de iniciar o repositorio `cairn-api`.

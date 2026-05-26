@@ -81,3 +81,35 @@ O projeto seguira Atomic Design, SOLID, DDD pragmatico, Clean Code e Vertical Sl
 Consequencias:
 
 Cada entrega deve ser avaliada por criterios objetivos de qualidade antes de mergear em `develop`. Esses padroes devem orientar a implementacao sem gerar camadas desnecessarias ou complexidade artificial.
+
+## 2026-05-26 - Carrinho e checkout locais na fase mock
+
+Estado: aceita
+
+Contexto:
+
+A Fase 1 do `cairn-web` precisa validar o fluxo comercial antes da API real. O backend separado ainda nao foi iniciado neste repositorio, mas o fluxo de produto, carrinho e checkout precisa parecer funcional e plausivel.
+
+Decisao:
+
+Implementar o carrinho com Zustand persistido em `localStorage`, usando snapshots dos dados necessarios do produto e variante. Implementar o checkout como fluxo simulado no frontend, sem gateway de pagamento e sem persistencia real de pedido.
+
+Consequencias:
+
+O fluxo atual permite adicionar produtos ao carrinho, alterar quantidade, remover itens, revisar subtotal e confirmar um pedido simulado. Na fase de backend, essa implementacao deve ser substituida ou sincronizada com endpoints REST de carrinho e pedidos, mantendo os componentes de UI sempre que possivel.
+
+## 2026-05-26 - Busca do header direciona para catalogo com query
+
+Estado: aceita
+
+Contexto:
+
+O botao de busca do header nao deve navegar diretamente para o catalogo sem contexto. A experiencia esperada e abrir um campo minimalista para o usuario digitar o termo de busca.
+
+Decisao:
+
+O header abre um campo de busca inline/sobreposto. Ao enviar, a navegacao usa `/catalog?q=termo`, e o catalogo aplica a busca sobre os dados mockados.
+
+Consequencias:
+
+A busca global da fase mock fica centralizada no catalogo. Quando houver API, o parametro `q` deve ser preservado como contrato de UI e integrado ao endpoint de produtos ou a um endpoint de busca dedicado.
