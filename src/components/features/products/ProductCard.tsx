@@ -15,9 +15,9 @@ type ProductCardProps = {
 export function ProductCard({ product }: ProductCardProps) {
   const stockLabel =
     product.stockStatus === "low_stock"
-      ? "Low stock"
+      ? "Baixo estoque"
       : product.stockStatus === "out_of_stock"
-        ? "Sold out"
+        ? "Esgotado"
         : undefined;
 
   return (
@@ -26,12 +26,12 @@ export function ProductCard({ product }: ProductCardProps) {
         <Link to={`/products/${product.slug}`} className="block">
           <ProductImage tone={product.images[0]} />
           <div className="absolute left-4 top-4 flex gap-2">
-            {product.featured ? <ProductBadge label="Featured" tone="dark" /> : null}
+            {product.featured ? <ProductBadge label="Destaque" tone="dark" /> : null}
             {stockLabel ? <ProductBadge label={stockLabel} tone="accent" /> : null}
           </div>
         </Link>
         <Button
-          aria-label={`Adicionar ${product.name} a wishlist`}
+          aria-label={`Adicionar ${product.name} aos favoritos`}
           className="absolute right-3 top-3 bg-white/85 text-cairn-black hover:bg-cairn-sand"
           size="icon"
           variant="ghost"

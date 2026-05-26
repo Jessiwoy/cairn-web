@@ -9,7 +9,7 @@ export function NotFoundPage() {
         to="/"
         className="inline-flex h-11 items-center bg-cairn-black px-5 text-sm font-semibold text-white transition hover:bg-cairn-green"
       >
-        Voltar para home
+        Voltar ao inicio
       </Link>
     </PageShell>
   );

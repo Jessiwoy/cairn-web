@@ -15,10 +15,10 @@ export function HomePage() {
         <Container className="grid min-h-[calc(100vh-4rem)] items-end py-16 lg:grid-cols-[1fr_0.8fr] lg:py-24">
           <div className="max-w-2xl">
             <Typography className="mb-5 text-cairn-sand" variant="eyebrow">
-              Outdoor retail premium
+              Varejo outdoor premium
             </Typography>
             <Typography as="h1" variant="display">
-              Gear built for the long route.
+              Equipamentos para rotas longas.
             </Typography>
             <Typography className="mt-6 max-w-xl text-white/72 md:text-lg" variant="body">
               Equipamentos e vestuario outdoor para trilhas, acampamentos,
@@ -34,16 +34,16 @@ export function HomePage() {
                 size="lg"
                 variant="outline"
               >
-                <Link to="/catalog?collection=field-tested">Field tested</Link>
+                <Link to="/catalog?collection=field-tested">Testado em campo</Link>
               </Button>
             </div>
           </div>
 
           <div className="mt-12 hidden border-l border-white/12 pl-10 text-sm leading-7 text-white/64 lg:block">
-            <p>Hiking</p>
+            <p>Trilha</p>
             <p>Camping</p>
             <p>Trekking</p>
-            <p>Bushcraft</p>
+            <p>Campo</p>
           </div>
         </Container>
       </section>

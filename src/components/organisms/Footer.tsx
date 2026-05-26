@@ -3,7 +3,12 @@ import { Link } from "react-router-dom";
 import { Container } from "@/components/atoms/Container";
 import { Typography } from "@/components/atoms/Typography";
 
-const footerLinks = ["Hiking", "Camping", "Trekking", "Bushcraft"];
+const footerLinks = [
+  { label: "Trilha", slug: "hiking" },
+  { label: "Camping", slug: "camping" },
+  { label: "Trekking", slug: "trekking" },
+  { label: "Campo", slug: "bushcraft" },
+];
 
 export function Footer() {
   return (
@@ -14,13 +19,17 @@ export function Footer() {
             CAIRN
           </Link>
           <Typography className="mt-3 max-w-sm text-white/64" variant="body">
-            Premium outdoor retail para rotas longas, acampamentos e exploracao.
+            Varejo outdoor premium para rotas longas, acampamentos e exploracao.
           </Typography>
         </div>
         <nav className="grid gap-2 text-sm text-white/70">
           {footerLinks.map((link) => (
-            <Link key={link} to={`/catalog?category=${link.toLowerCase()}`} className="hover:text-cairn-sand">
-              {link}
+            <Link
+              key={link.slug}
+              to={`/catalog?category=${link.slug}`}
+              className="hover:text-cairn-sand"
+            >
+              {link.label}
             </Link>
           ))}
         </nav>

@@ -15,7 +15,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary: "bg-cairn-black text-white hover:bg-cairn-green",
-  secondary: "bg-white text-cairn-black hover:bg-cairn-sand",
+  secondary: "bg-white !text-cairn-black hover:bg-cairn-sand hover:!text-cairn-black",
   outline:
     "border border-cairn-black/20 bg-transparent text-cairn-black hover:border-cairn-copper hover:text-cairn-copper",
   ghost: "bg-transparent text-current hover:text-cairn-copper",
@@ -58,7 +58,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         type={asChild ? undefined : type}
         {...props}
       >
-        {isLoading ? "Loading" : children}
+        {isLoading ? "Carregando" : children}
       </Component>
     );
   },

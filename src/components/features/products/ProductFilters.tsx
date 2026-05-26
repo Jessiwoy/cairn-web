@@ -37,7 +37,7 @@ export function ProductFilters({
         <Input
           label="Busca"
           onChange={(event) => onQueryChange(event.target.value)}
-          placeholder="Produto, categoria ou tag"
+          placeholder="Produto, categoria ou termo"
           type="search"
           value={query}
         />

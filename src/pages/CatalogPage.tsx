@@ -54,7 +54,7 @@ export function CatalogPage() {
             Produtos outdoor selecionados
           </Typography>
           <Typography className="mt-4 text-cairn-gray" variant="body">
-            Equipamentos, vestuario e acessorios para hiking, camping, trekking
+            Equipamentos, vestuario e acessorios para trilha, camping, trekking
             e exploracao com foco em durabilidade e uso real.
           </Typography>
         </div>
@@ -73,7 +73,7 @@ export function CatalogPage() {
           <div>
             <div className="mb-5 flex items-center justify-between border-b border-cairn-black/10 pb-4 text-sm text-cairn-gray">
               <span>{filteredProducts.length} produtos</span>
-              <span>Mock data local</span>
+              <span>Dados locais simulados</span>
             </div>
             <ProductGrid
               emptyAction={

@@ -12,7 +12,7 @@ export function RatingSummary({ rating, reviewCount }: RatingSummaryProps) {
         <Star className="h-4 w-4 fill-cairn-copper text-cairn-copper" />
         <span className="font-semibold">{rating.toFixed(1)}</span>
       </span>
-      <span>{reviewCount} reviews</span>
+      <span>{reviewCount} avaliacoes</span>
     </div>
   );
 }

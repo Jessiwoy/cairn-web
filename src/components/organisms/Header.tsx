@@ -5,10 +5,10 @@ import { Button } from "@/components/atoms/Button";
 import { Container } from "@/components/atoms/Container";
 
 const navigationItems = [
-  { label: "Hiking", href: "/catalog?category=hiking" },
+  { label: "Trilha", href: "/catalog?category=hiking" },
   { label: "Camping", href: "/catalog?category=camping" },
   { label: "Trekking", href: "/catalog?category=trekking" },
-  { label: "Bushcraft", href: "/catalog?category=bushcraft" },
+  { label: "Campo", href: "/catalog?category=bushcraft" },
 ];
 
 export function Header() {
@@ -60,7 +60,7 @@ export function Header() {
             variant="ghost"
             className="text-white/80 hover:text-cairn-sand"
           >
-            <Link to="/account" aria-label="Wishlist">
+            <Link to="/account" aria-label="Favoritos">
               <Heart size={20} strokeWidth={1.8} />
             </Link>
           </Button>

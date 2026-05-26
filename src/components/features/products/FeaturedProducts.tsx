@@ -16,7 +16,7 @@ export function FeaturedProducts({ products }: FeaturedProductsProps) {
       <Container>
         <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
-            <Typography variant="eyebrow">Field tested</Typography>
+            <Typography variant="eyebrow">Testado em campo</Typography>
             <Typography as="h2" className="mt-3 max-w-2xl" variant="h2">
               Equipamentos centrais para a proxima rota.
             </Typography>
