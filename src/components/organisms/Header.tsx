@@ -120,7 +120,7 @@ export function Header() {
             variant="ghost"
             className="text-white/80 hover:text-cairn-sand"
           >
-            <Link to="/account" aria-label="Conta">
+            <Link to="/login" aria-label="Entrar na conta">
               <UserRound size={20} strokeWidth={1.8} />
             </Link>
           </Button>
