@@ -4,6 +4,13 @@
 
 Usar mock data local para acelerar frontend, UX e componentizacao.
 
+Estado atual:
+
+- Catalogo e categorias usam mock data local em `src/data`.
+- Carrinho usa Zustand persistido em `localStorage`.
+- Checkout gera confirmacao simulada no frontend e limpa o carrinho.
+- Pedidos ainda nao sao persistidos localmente; a persistencia real fica para backend/API.
+
 ## Principio
 
 Mocks devem parecer dados reais de ecommerce e antecipar a modelagem backend.
@@ -149,3 +156,9 @@ Mocks devem parecer dados reais de ecommerce e antecipar a modelagem backend.
 
 - Inicialmente: mock checkout.
 - Futuramente: Stripe sandbox.
+
+## Persistencia Local Temporaria
+
+Durante a Fase 1, apenas o carrinho deve persistir localmente para validar continuidade de compra. Pedidos, usuarios, wishlist e admin devem permanecer como mocks ou placeholders ate haver decisao especifica ou integracao com API.
+
+Quando o backend estiver disponivel, o carrinho local deve ser reconciliado com os endpoints REST planejados e pedidos devem ser criados pela API, sem Stripe no MVP.
