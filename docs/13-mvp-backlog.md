@@ -19,7 +19,7 @@ Este backlog traduz os epicos em historias e entregas executaveis. O desenvolvim
 4. Pagina de Produto. Estado: parcialmente concluido; reviews ainda pendentes.
 5. Carrinho e Checkout Mockado. Estado: concluido em mock data local.
 6. Backend Base e Autenticacao. Estado: pendente no repositorio `cairn-api`.
-7. Integracao de Autenticacao no Frontend. Estado: pendente.
+7. Integracao de Autenticacao no Frontend. Estado: parcialmente concluida em UI mockada; integracao real pendente.
 8. Admin Dashboard MVP. Estado: pendente.
 9. Integracao de Catalogo, Carrinho e Pedidos. Estado: pendente.
 
@@ -245,6 +245,20 @@ Criterios de aceite:
 - Validacao de formulario.
 - Feedback de erro e sucesso.
 - Integracao com API.
+
+### Historia 7.1.1: Criar area de conta mockada
+
+Estado: concluida em mock data local.
+
+Como cliente, quero visualizar dados da minha conta e pedidos para acompanhar minha jornada de compra.
+
+Criterios de aceite:
+
+- Tela de conta com resumo do usuario.
+- Endereco principal mockado.
+- Historico de pedidos com status, itens, valores e datas.
+- Caminhos para favoritos e catalogo.
+- Sem prometer autenticacao real antes da API.
 
 ### Historia 7.2: Persistir sessao
 

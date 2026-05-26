@@ -77,13 +77,13 @@ Concluido no `cairn-web`:
 - Wishlist local persistida com Zustand e `localStorage`.
 - Checkout mockado com dados de contato, entrega, resumo e confirmacao simulada.
 - Login/cadastro visual com formularios e validacao HTML nativa.
+- Conta do usuario com perfil, endereco e historico de pedidos em mock data.
 
 Ainda pendente na Fase 1:
 
-- Conta e pedidos com mock data.
 - Admin dashboard visual simplificado.
 - Refinamento de assets reais, incluindo hero com video/imagem de campanha.
 
 Proximo passo recomendado:
 
-Avancar para autenticacao/conta visual ou wishlist local, antes de iniciar o repositorio `cairn-api`.
+Avancar para admin dashboard visual simplificado ou refinamento de assets da home, antes de iniciar o repositorio `cairn-api`.
