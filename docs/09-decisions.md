@@ -113,3 +113,19 @@ O header abre um campo de busca inline/sobreposto. Ao enviar, a navegacao usa `/
 Consequencias:
 
 A busca global da fase mock fica centralizada no catalogo. Quando houver API, o parametro `q` deve ser preservado como contrato de UI e integrado ao endpoint de produtos ou a um endpoint de busca dedicado.
+
+## 2026-05-26 - Wishlist local na fase mock
+
+Estado: aceita
+
+Contexto:
+
+A wishlist faz parte da descoberta e comparacao de produtos no ecommerce. Antes da autenticacao e da API real, a experiencia precisa permitir salvar produtos de forma local para validar o fluxo de favoritos.
+
+Decisao:
+
+Implementar wishlist com Zustand persistido em `localStorage`, usando snapshots minimos de produto para renderizar a pagina de favoritos e sincronizar os botoes de coracao em cards, header e pagina de produto.
+
+Consequencias:
+
+A rota `/wishlist` passa a representar os favoritos da fase mock. Quando a autenticacao e o backend estiverem disponiveis, a wishlist local deve ser reconciliada com endpoints REST e associada ao usuario autenticado.

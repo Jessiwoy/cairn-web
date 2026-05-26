@@ -12,6 +12,7 @@ import { QuantitySelector } from "@/components/molecules/QuantitySelector";
 import { RatingSummary } from "@/components/molecules/RatingSummary";
 import { products } from "@/data/products";
 import { useCartStore } from "@/store/cartStore";
+import { useWishlistStore } from "@/store/wishlistStore";
 
 const stockLabels = {
   in_stock: "Em estoque",
@@ -23,6 +24,10 @@ export function ProductPage() {
   const { slug } = useParams();
   const product = products.find((item) => item.slug === slug);
   const addItem = useCartStore((state) => state.addItem);
+  const toggleFavorite = useWishlistStore((state) => state.toggleItem);
+  const isFavorite = useWishlistStore((state) =>
+    product ? state.isFavorite(product.id) : false,
+  );
   const [quantity, setQuantity] = useState(1);
   const [wasAdded, setWasAdded] = useState(false);
   const [selectedVariantId, setSelectedVariantId] = useState<string | undefined>(
@@ -167,9 +172,22 @@ export function ProductPage() {
                   <ShoppingCart size={18} />
                   Adicionar ao carrinho
                 </Button>
-                <Button aria-label="Adicionar aos favoritos" size="lg" variant="outline">
-                  <Heart size={18} />
-                  Favoritar
+                <Button
+                  aria-label={
+                    isFavorite
+                      ? "Remover dos favoritos"
+                      : "Adicionar aos favoritos"
+                  }
+                  aria-pressed={isFavorite}
+                  onClick={() => toggleFavorite(product)}
+                  size="lg"
+                  variant="outline"
+                >
+                  <Heart
+                    className={isFavorite ? "fill-cairn-copper text-cairn-copper" : ""}
+                    size={18}
+                  />
+                  {isFavorite ? "Favorito" : "Favoritar"}
                 </Button>
               </div>
               {wasAdded ? (

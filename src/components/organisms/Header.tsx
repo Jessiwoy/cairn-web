@@ -5,6 +5,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { Button } from "@/components/atoms/Button";
 import { Container } from "@/components/atoms/Container";
 import { useCartStore } from "@/store/cartStore";
+import { useWishlistStore } from "@/store/wishlistStore";
 
 const navigationItems = [
   { label: "Trilha", href: "/catalog?category=hiking" },
@@ -16,6 +17,7 @@ const navigationItems = [
 export function Header() {
   const navigate = useNavigate();
   const itemCount = useCartStore((state) => state.itemCount);
+  const wishlistCount = useWishlistStore((state) => state.itemCount);
   const searchInputRef = useRef<HTMLInputElement>(null);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
@@ -126,10 +128,15 @@ export function Header() {
             asChild
             size="icon"
             variant="ghost"
-            className="text-white/80 hover:text-cairn-sand"
+            className="relative text-white/80 hover:text-cairn-sand"
           >
-            <Link to="/account" aria-label="Favoritos">
+            <Link to="/wishlist" aria-label="Favoritos">
               <Heart size={20} strokeWidth={1.8} />
+              {wishlistCount > 0 ? (
+                <span className="absolute right-0 top-0 grid h-4 min-w-4 place-items-center bg-cairn-sand px-1 text-[10px] font-semibold leading-none text-cairn-black">
+                  {wishlistCount}
+                </span>
+              ) : null}
             </Link>
           </Button>
           <Button

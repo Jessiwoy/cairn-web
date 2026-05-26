@@ -6,6 +6,7 @@ import { ProductBadge } from "@/components/molecules/ProductBadge";
 import { ProductPrice } from "@/components/molecules/ProductPrice";
 import { RatingSummary } from "@/components/molecules/RatingSummary";
 import { ProductImage } from "@/components/features/products/ProductImage";
+import { useWishlistStore } from "@/store/wishlistStore";
 import type { Product } from "@/types/product";
 
 type ProductCardProps = {
@@ -13,6 +14,8 @@ type ProductCardProps = {
 };
 
 export function ProductCard({ product }: ProductCardProps) {
+  const isFavorite = useWishlistStore((state) => state.isFavorite(product.id));
+  const toggleItem = useWishlistStore((state) => state.toggleItem);
   const stockLabel =
     product.stockStatus === "low_stock"
       ? "Baixo estoque"
@@ -31,12 +34,18 @@ export function ProductCard({ product }: ProductCardProps) {
           </div>
         </Link>
         <Button
-          aria-label={`Adicionar ${product.name} aos favoritos`}
+          aria-label={
+            isFavorite
+              ? `Remover ${product.name} dos favoritos`
+              : `Adicionar ${product.name} aos favoritos`
+          }
           className="absolute right-3 top-3 bg-white/85 text-cairn-black hover:bg-cairn-sand"
+          onClick={() => toggleItem(product)}
+          aria-pressed={isFavorite}
           size="icon"
           variant="ghost"
         >
-          <Heart size={18} />
+          <Heart className={isFavorite ? "fill-cairn-copper text-cairn-copper" : ""} size={18} />
         </Button>
       </div>
       <Link to={`/products/${product.slug}`} className="block pt-4">

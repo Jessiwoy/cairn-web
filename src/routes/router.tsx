@@ -11,6 +11,7 @@ import { LoginPage } from "@/pages/LoginPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
 import { ProductPage } from "@/pages/ProductPage";
 import { RegisterPage } from "@/pages/RegisterPage";
+import { WishlistPage } from "@/pages/WishlistPage";
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +22,7 @@ export const router = createBrowserRouter([
       { path: "/products/:slug", element: <ProductPage /> },
       { path: "/cart", element: <CartPage /> },
       { path: "/checkout", element: <CheckoutPage /> },
+      { path: "/wishlist", element: <WishlistPage /> },
       { path: "/login", element: <LoginPage /> },
       { path: "/register", element: <RegisterPage /> },
       { path: "/account", element: <AccountPage /> },
