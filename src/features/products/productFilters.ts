@@ -33,9 +33,12 @@ export function filterProducts(products: Product[], filters: ProductFilterState)
         product.title,
         product.name,
         product.brand,
+        product.description,
         product.subcategory,
         product.category,
+        ...product.materials,
         ...product.tags,
+        ...product.technicalDetails,
       ]
         .join(" ")
         .toLowerCase();
