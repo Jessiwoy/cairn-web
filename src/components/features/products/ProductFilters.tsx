@@ -8,6 +8,7 @@ import type { ProductCategory, ProductSort } from "@/types/product";
 type ProductFiltersProps = {
   category?: ProductCategory;
   maxPrice?: number;
+  onClear: () => void;
   onCategoryChange: (category?: ProductCategory) => void;
   onMaxPriceChange: (price?: number) => void;
   onQueryChange: (query: string) => void;
@@ -19,6 +20,7 @@ type ProductFiltersProps = {
 export function ProductFilters({
   category,
   maxPrice,
+  onClear,
   onCategoryChange,
   onMaxPriceChange,
   onQueryChange,
@@ -89,12 +91,7 @@ export function ProductFilters({
         </label>
 
         <Button
-          onClick={() => {
-            onCategoryChange(undefined);
-            onMaxPriceChange(undefined);
-            onQueryChange("");
-            onSortChange("featured");
-          }}
+          onClick={onClear}
           variant="outline"
         >
           Limpar filtros

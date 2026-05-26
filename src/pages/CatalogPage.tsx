@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
 import { Button } from "@/components/atoms/Button";
@@ -13,7 +13,8 @@ import type { ProductCategory, ProductSort } from "@/types/product";
 export function CatalogPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const initialCategory = searchParams.get("category") as ProductCategory | null;
-  const [query, setQuery] = useState("");
+  const initialQuery = searchParams.get("q") ?? "";
+  const [query, setQuery] = useState(initialQuery);
   const [category, setCategory] = useState<ProductCategory | undefined>(
     initialCategory ?? undefined,
   );
@@ -34,7 +35,18 @@ export function CatalogPage() {
 
   const handleCategoryChange = (nextCategory?: ProductCategory) => {
     setCategory(nextCategory);
-    setSearchParams(nextCategory ? { category: nextCategory } : {});
+    setSearchParams({
+      ...(nextCategory ? { category: nextCategory } : {}),
+      ...(query.trim() ? { q: query.trim() } : {}),
+    });
+  };
+
+  const handleQueryChange = (nextQuery: string) => {
+    setQuery(nextQuery);
+    setSearchParams({
+      ...(category ? { category } : {}),
+      ...(nextQuery.trim() ? { q: nextQuery.trim() } : {}),
+    });
   };
 
   const clearFilters = () => {
@@ -44,6 +56,11 @@ export function CatalogPage() {
     setSort("featured");
     setSearchParams({});
   };
+
+  useEffect(() => {
+    setCategory(initialCategory ?? undefined);
+    setQuery(initialQuery);
+  }, [initialCategory, initialQuery]);
 
   return (
     <section className="py-14 lg:py-20">
@@ -63,9 +80,10 @@ export function CatalogPage() {
           <ProductFilters
             category={category}
             maxPrice={maxPrice}
+            onClear={clearFilters}
             onCategoryChange={handleCategoryChange}
             onMaxPriceChange={setMaxPrice}
-            onQueryChange={setQuery}
+            onQueryChange={handleQueryChange}
             onSortChange={setSort}
             query={query}
             sort={sort}
